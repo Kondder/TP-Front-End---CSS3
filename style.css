@@ -1,0 +1,184 @@
+/*
+Contenidos:
+
+Herencia CSS
+Jerarquia CSS
+Box Model CSS
+Position CSS (static, absolute, relative and prop:z-index)
+Media Query CSS
+*/
+
+/*
+top, left, right, bottom : se usan para absolute y relative
+se utiliza para poner popus, elemntos flotantes, 
+static: por defecto
+absolute: coloca un elemento en relacion a su padre
+relative: darle posiconamiento a elemento hijos
+*/
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+.header-h1{
+    background-color: rgba(128, 128, 128, 0.565);
+    color: whitesmoke;
+    padding: 5px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+body{
+    background-color: rgb(252, 247, 253);
+}
+.cita{
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #ccc;
+    padding-left: 10px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 20px 0; /* Márgenes superior e inferior */
+    background-color: #f9f9f9;
+}
+
+blockquote p::before, blockquote p::after {
+    content: '\201C';
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-section{
+    background-color: white;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 0.4rem;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    width: 80vw;
+}
+.box{
+    background-color: #f7ef98;
+    padding: 10px;
+    margin: 2rem;
+    border: 1px solid black;
+    box-shadow: 3px 5px 8px black;
+    border-radius: 0.4rem;  
+}
+
+/*Hereda propiedades de Box 1*/
+.box1 {
+    border: 3px solid black;
+    background-color: #F1FA73;
+}
+
+.box span{
+    font-size: 1.5rem;
+}
+header{
+    text-align: center;
+}
+
+.container-section h2{
+    border-bottom: 1px solid black;
+}
+
+.texto-modificado{
+    font-size: 1.1rem;
+    text-align: start;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.span-css{
+    text-transform: uppercase;
+}
+
+.caja-relativa{
+    position: relative;
+    background-color: #E0F7FA;
+    padding: 15px;
+}
+
+.caja-absoluta{
+    position: absolute;
+    background-color: #4DB6AC;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    color: rgba(255, 255, 255, 0.902);
+    padding: 15px;
+    border-radius: 0.4rem;
+    padding: 10px;
+    right: 20px;
+    top: 50px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /*repeat(cnt de columna, tamaño)*/
+    width: auto;
+    height: auto;
+    gap: 10px;
+}
+
+.grid-item{
+    background-color: #4476bd;
+    color: white;
+    text-align: center;
+    border-radius: 0.4rem;
+    padding: 12px;
+}
+
+
+.animacion{
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 0, 0, 0.493);
+    transition: 0.44s;
+}
+
+.animacion:hover{
+    background-color: #4476bd;
+}
+
+.mover{
+    background-color: rgba(0, 0, 255, 0.464);
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    animation: mover 4s infinite;
+    transition: 0.88s ease;
+}
+
+.mover:hover{
+    background-color: rgba(255, 0, 0, 0.493);
+    cursor: pointer;
+}
+@keyframes mover{
+    0%{
+        transform: translateX(0);
+    }
+
+    50%{
+        transform: translateX( calc(80vw - 250px));
+    }
+
+
+    100%{
+        transform: translate(0);
+    }
+}
+@media screen and (max-width: 768px) {
+    body{
+        background-color: rgb(241, 207, 252);
+    }
+
+    .header-h1{
+        font-size: 1.5em;
+    }
+}
