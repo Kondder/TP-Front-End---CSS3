@@ -18,21 +18,19 @@ relative: darle posiconamiento a elemento hijos
 
 *{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
 }
 
-html{
-    box-sizing: border-box;
-}
 
 .header-h1{
-    background-color: rgba(128, 128, 128, 0.565);
-    color: whitesmoke;
+    background-color: #20312f;
+    color: #FFFFFF;
     padding: 5px;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
 }
 
 body{
-    background-color: rgb(252, 247, 253);
+    background-color: #aebe9d;
 }
 .cita{
     font-style: italic;
@@ -43,6 +41,13 @@ body{
     padding-bottom: 10px;
     margin: 20px 0; /* Márgenes superior e inferior */
     background-color: #f9f9f9;
+}
+
+.texto-modificado{
+    font-size: 1.1rem;
+    text-align: start;
+    text-decoration: underline;
+    text-transform: capitalize;
 }
 
 blockquote p::before, blockquote p::after {
@@ -63,19 +68,21 @@ main{
     box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
     width: 80vw;
 }
+
 .box{
-    background-color: #f7ef98;
+    background-color: #b5cc9c;
     padding: 10px;
     margin: 2rem;
     border: 1px solid black;
-    box-shadow: 3px 5px 8px black;
+    box-shadow: 3px 10px 5px rgba(0,0,0,0.2);
     border-radius: 0.4rem;  
 }
 
 /*Hereda propiedades de Box 1*/
 .box1 {
     border: 3px solid black;
-    background-color: #F1FA73;
+    background-color: #097460;
+    color: white;
 }
 
 .box span{
@@ -89,33 +96,30 @@ header{
     border-bottom: 1px solid black;
 }
 
-.texto-modificado{
-    font-size: 1.1rem;
-    text-align: start;
-    text-decoration: underline;
-    text-transform: capitalize;
-}
-
 .span-css{
     text-transform: uppercase;
 }
 
+
 .caja-relativa{
     position: relative;
-    background-color: #E0F7FA;
-    padding: 15px;
+    background-color: #a6c288;
+    padding: 20px;
+    margin-bottom: 25px;
+    top: 0;
+    left: 0;
 }
 
 .caja-absoluta{
     position: absolute;
-    background-color: #4DB6AC;
+    background-color: #0b8770;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
     color: rgba(255, 255, 255, 0.902);
     padding: 15px;
     border-radius: 0.4rem;
     padding: 10px;
-    right: 20px;
     top: 50px;
+    right: 20px;
 }
 
 .grid-container{
@@ -127,7 +131,7 @@ header{
 }
 
 .grid-item{
-    background-color: #4476bd;
+    background-color: #0b8770;
     color: white;
     text-align: center;
     border-radius: 0.4rem;
@@ -138,16 +142,16 @@ header{
 .animacion{
     width: 250px;
     height: 250px;
-    background-color: rgba(255, 0, 0, 0.493);
+    background-color: #0b8770;
     transition: 0.44s;
 }
 
 .animacion:hover{
-    background-color: #4476bd;
+    background-color: #DEEFE7;
 }
 
 .mover{
-    background-color: rgba(0, 0, 255, 0.464);
+    background-color: #DEEFE7;
     border-radius: 50%;
     height: 250px;
     width: 250px;
@@ -156,7 +160,7 @@ header{
 }
 
 .mover:hover{
-    background-color: rgba(255, 0, 0, 0.493);
+    background-color: #0b8770;
     cursor: pointer;
 }
 @keyframes mover{
@@ -174,8 +178,16 @@ header{
     }
 }
 @media screen and (max-width: 768px) {
+    .caja-absoluta {
+        top: 100%;
+    }
+
+    .caja-relativa{
+        margin-bottom: 70px;
+    }
+
     body{
-        background-color: rgb(241, 207, 252);
+        background-color: (241, 207, 252);
     }
 
     .header-h1{
